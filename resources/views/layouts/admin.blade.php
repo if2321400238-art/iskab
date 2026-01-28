@@ -20,35 +20,60 @@
                     📊 Dashboard
                 </a>
 
-                <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Konten</div>
-                <a href="{{ route('admin.posts.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.posts.*') ? 'bg-green-600 text-white' : '' }}">
-                    📰 Posts (Berita & Pena Santri)
-                </a>
-                <a href="{{ route('admin.gallery.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.gallery.*') ? 'bg-green-600 text-white' : '' }}">
-                    🖼️ Galeri
-                </a>
-                <a href="{{ route('admin.download.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.download.*') ? 'bg-green-600 text-white' : '' }}">
-                    ⬇️ Download
-                </a>
+                {{-- Konten - Hanya Admin & Editor --}}
+                @if(in_array(auth()->user()->role?->slug, ['admin', 'editor']))
+                    <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Konten</div>
+                    <a href="{{ route('admin.posts.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.posts.*') ? 'bg-green-600 text-white' : '' }}">
+                        📰 Posts (Berita & Pena Santri)
+                    </a>
+                    <a href="{{ route('admin.gallery.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.gallery.*') ? 'bg-green-600 text-white' : '' }}">
+                        🖼️ Galeri
+                    </a>
+                    <a href="{{ route('admin.download.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.download.*') ? 'bg-green-600 text-white' : '' }}">
+                        ⬇️ Download
+                    </a>
+                @endif
 
+                {{-- Organisasi --}}
                 <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider mt-6">Organisasi</div>
-                <a href="{{ route('admin.profil-organisasi.edit') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.profil-organisasi.*') ? 'bg-green-600 text-white' : '' }}">
-                    🏢 Profil Organisasi
-                </a>
-                <a href="{{ route('admin.korwil.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.korwil.*') ? 'bg-green-600 text-white' : '' }}">
-                    🗺️ Korwil
-                </a>
-                <a href="{{ route('admin.rayon.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.rayon.*') ? 'bg-green-600 text-white' : '' }}">
-                    📍 Rayon
-                </a>
-                <a href="{{ route('admin.anggota.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.anggota.*') ? 'bg-green-600 text-white' : '' }}">
-                    👥 Anggota
-                </a>
+                
+                {{-- Profil Organisasi - Hanya Admin --}}
+                @if(auth()->user()->role?->slug === 'admin')
+                    <a href="{{ route('admin.profil-organisasi.edit') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.profil-organisasi.*') ? 'bg-green-600 text-white' : '' }}">
+                        🏢 Profil Organisasi
+                    </a>
+                @endif
 
-                @if(auth()->user()->role?->slug === 'bph_pb')
-                    <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider mt-6">Approval</div>
+                {{-- Korwil - Admin & BPH PB --}}
+                @if(in_array(auth()->user()->role?->slug, ['admin', 'bph_pb']))
+                    <a href="{{ route('admin.korwil.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.korwil.*') ? 'bg-green-600 text-white' : '' }}">
+                        🗺️ Korwil
+                    </a>
+                @endif
+
+                {{-- Rayon - Admin, BPH PB, & BPH Korwil --}}
+                @if(in_array(auth()->user()->role?->slug, ['admin', 'bph_pb', 'bph_korwil']))
+                    <a href="{{ route('admin.rayon.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.rayon.*') ? 'bg-green-600 text-white' : '' }}">
+                        📍 Rayon
+                    </a>
+                @endif
+
+                {{-- Anggota - Admin, BPH Korwil, & BPH Rayon --}}
+                @if(in_array(auth()->user()->role?->slug, ['admin', 'bph_korwil', 'bph_rayon']))
+                    <a href="{{ route('admin.anggota.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.anggota.*') ? 'bg-green-600 text-white' : '' }}">
+                        👥 Anggota
+                    </a>
+                @endif
+
+                {{-- SK Pengajuan - Semua Role kecuali Editor --}}
+                @if(auth()->user()->role?->slug !== 'editor')
+                    <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider mt-6">SK Pengajuan</div>
                     <a href="{{ route('admin.sk-pengajuan.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.sk-pengajuan.*') ? 'bg-green-600 text-white' : '' }}">
-                        ✅ SK Pengajuan
+                        @if(auth()->user()->role?->slug === 'bph_pb')
+                            ✅ Approval SK
+                        @else
+                            📝 SK Saya
+                        @endif
                     </a>
                 @endif
             </nav>

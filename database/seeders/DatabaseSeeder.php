@@ -49,5 +49,23 @@ class DatabaseSeeder extends Seeder
             'role_id' => \App\Models\Role::where('slug', 'bph_pb')->first()?->id,
             'email_verified_at' => now(),
         ]);
+
+        // Create BPH Korwil User
+        User::create([
+            'name' => 'BPH Korwil',
+            'email' => 'bphkorwil@iskab.com',
+            'password' => bcrypt('password'),
+            'role_id' => \App\Models\Role::where('slug', 'bph_korwil')->first()?->id,
+            'email_verified_at' => now(),
+        ]);
+
+        // Create BPH Rayon User
+        User::create([
+            'name' => 'BPH Rayon',
+            'email' => 'bphrayon@iskab.com',
+            'password' => bcrypt('password'),
+            'role_id' => \App\Models\Role::where('slug', 'bph_rayon')->first()?->id,
+            'email_verified_at' => now(),
+        ]);
     }
 }
