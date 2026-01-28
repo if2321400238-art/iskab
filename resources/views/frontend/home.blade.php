@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section Full Width dari Atas dengan Rounded Bottom -->
-<section class="relative bg-gradient-to-r from-green-700 to-green-800 text-white overflow-hidden rounded-b-[3rem] h-96 md:h-[600px] lg:h-[700px] pt-20">
+<section class="relative bg-gradient-to-r from-green-700 to-green-800 text-white overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] min-h-[500px] md:min-h-[600px] lg:min-h-[700px] pt-20 md:pt-24">
     <!-- Background Image dengan Overlay Hijau Gelap -->
     @if($profil && $profil->hero_image)
         <div class="absolute inset-0">
@@ -19,28 +19,28 @@
     @endif
 
     <!-- Konten Hero - Centered -->
-    <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-12 lg:px-20" style="min-height: 500px;">
+    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 lg:py-24">
         <!-- Heading Besar -->
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-10 leading-tight text-white">
-            Website Resmi Ikatan Santri<br>Kalimantan Barat (ISKAB)
+        <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-10 leading-tight text-white">
+            Website Resmi Ikatan Santri<br class="hidden sm:block"><span class="sm:hidden"> </span>Kalimantan Barat (ISKAB)
         </h1>
 
         <!-- Tombol CTA dengan Background Shape Masing-masing -->
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4 w-full sm:w-auto">
             <!-- Tombol Hijau dengan Background Shape -->
-            <div class="relative">
-                <div class="absolute inset-0 -inset-x-1 -inset-y-1 rounded-2xl" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);"></div>
+            <div class="relative w-full sm:w-auto">
+                <div class="absolute inset-0 -inset-x-1 -inset-y-1 rounded-xl md:rounded-2xl" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);"></div>
                 <a href="{{ route('about.profil') }}"
-                   class="relative px-10 py-4 bg-green-500 text-white text-base font-semibold rounded-xl hover:bg-green-600 transition-all duration-300 shadow-lg inline-block">
+                   class="relative block text-center px-6 sm:px-8 md:px-10 py-3 md:py-4 bg-green-500 text-white text-sm md:text-base font-semibold rounded-lg md:rounded-xl hover:bg-green-600 transition-all duration-300 shadow-lg">
                     Tentang kami
                 </a>
             </div>
 
             <!-- Tombol Putih dengan Background Shape -->
-            <div class="relative">
-                <div class="absolute inset-0 -inset-x-1 -inset-y-1 rounded-2xl" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);"></div>
+            <div class="relative w-full sm:w-auto">
+                <div class="absolute inset-0 -inset-x-1 -inset-y-1 rounded-xl md:rounded-2xl" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);"></div>
                 <a href="{{ route('posts.berita') }}"
-                   class="relative px-10 py-4 bg-white text-green-700 text-base font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg inline-block">
+                   class="relative block text-center px-6 sm:px-8 md:px-10 py-3 md:py-4 bg-white text-green-700 text-sm md:text-base font-semibold rounded-lg md:rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg">
                     Baca Berita
                 </a>
             </div>
@@ -49,35 +49,35 @@
 </section>
 
 <!-- ISKAB Dalam Angka Section -->
-<section class="bg-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-28">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-green-700 mb-12">ISKAB dalam Angka</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<section class="bg-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-green-700 mb-8 md:mb-12">ISKAB dalam Angka</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div class="relative">
                 <!-- Background Shape -->
-                <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-3xl"></div>
+                <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-2xl md:rounded-3xl"></div>
                 <!-- Card Content -->
-                <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-3xl p-8 text-center shadow-2xl transform hover:scale-105 transition">
-                    <div class="text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['korwil'] }}</div>
-                    <div class="text-xl font-semibold text-white uppercase tracking-wider">KORWIL</div>
+                <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl transform hover:scale-105 transition">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['korwil'] }}</div>
+                    <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">KORWIL</div>
                 </div>
             </div>
             <div class="relative">
                 <!-- Background Shape -->
-                <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-3xl"></div>
+                <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-2xl md:rounded-3xl"></div>
                 <!-- Card Content -->
-                <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-3xl p-8 text-center shadow-2xl transform hover:scale-105 transition">
-                    <div class="text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['rayon'] }}</div>
-                    <div class="text-xl font-semibold text-white uppercase tracking-wider">RAYON</div>
+                <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl transform hover:scale-105 transition">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['rayon'] }}</div>
+                    <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">RAYON</div>
                 </div>
             </div>
-            <div class="relative">
+            <div class="relative sm:col-span-2 md:col-span-1">
                 <!-- Background Shape -->
-                <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-3xl"></div>
+                <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-2xl md:rounded-3xl"></div>
                 <!-- Card Content -->
-                <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-3xl p-8 text-center shadow-2xl transform hover:scale-105 transition">
-                    <div class="text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['anggota'] }}</div>
-                    <div class="text-xl font-semibold text-white uppercase tracking-wider">SANTRI</div>
+                <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl transform hover:scale-105 transition">
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['anggota'] }}</div>
+                    <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">SANTRI</div>
                 </div>
             </div>
         </div>
