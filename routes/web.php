@@ -99,7 +99,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::middleware('role:admin')->group(function () {
         Route::get('/profil-organisasi', [ProfilOrganisasiController::class, 'edit'])->name('profil-organisasi.edit');
         Route::put('/profil-organisasi', [ProfilOrganisasiController::class, 'update'])->name('profil-organisasi.update');
-        
+
         // User Management (Admin only)
         Route::resource('users', UserController::class);
     });

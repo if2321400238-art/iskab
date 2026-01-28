@@ -36,7 +36,7 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->email }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full
                             @if($user->role?->slug === 'admin') bg-red-100 text-red-800
                             @elseif($user->role?->slug === 'bph_pb') bg-purple-100 text-purple-800
                             @elseif($user->role?->slug === 'bph_korwil') bg-blue-100 text-blue-800

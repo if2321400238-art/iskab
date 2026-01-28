@@ -14,9 +14,9 @@
             <!-- Nama -->
             <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
-                <input type="text" 
-                       name="name" 
-                       id="name" 
+                <input type="text"
+                       name="name"
+                       id="name"
                        value="{{ old('name', $user->name) }}"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 @error('name') border-red-500 @enderror"
                        required>
@@ -28,9 +28,9 @@
             <!-- Email -->
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                <input type="email" 
-                       name="email" 
-                       id="email" 
+                <input type="email"
+                       name="email"
+                       id="email"
                        value="{{ old('email', $user->email) }}"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 @error('email') border-red-500 @enderror"
                        required>
@@ -42,7 +42,7 @@
             <!-- Role -->
             <div>
                 <label for="role_id" class="block text-sm font-medium text-gray-700 mb-2">Role</label>
-                <select name="role_id" 
+                <select name="role_id"
                         id="role_id"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 @error('role_id') border-red-500 @enderror"
                         required>
@@ -69,8 +69,8 @@
             <!-- Password -->
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password Baru</label>
-                <input type="password" 
-                       name="password" 
+                <input type="password"
+                       name="password"
                        id="password"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 @error('password') border-red-500 @enderror">
                 @error('password')
@@ -82,8 +82,8 @@
             <!-- Konfirmasi Password -->
             <div>
                 <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">Konfirmasi Password Baru</label>
-                <input type="password" 
-                       name="password_confirmation" 
+                <input type="password"
+                       name="password_confirmation"
                        id="password_confirmation"
                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
             </div>

@@ -36,7 +36,7 @@
 
                 {{-- Organisasi --}}
                 <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider mt-6">Organisasi</div>
-                
+
                 {{-- Profil Organisasi - Hanya Admin --}}
                 @if(auth()->user()->role?->slug === 'admin')
                     <a href="{{ route('admin.profil-organisasi.edit') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.profil-organisasi.*') ? 'bg-green-600 text-white' : '' }}">
