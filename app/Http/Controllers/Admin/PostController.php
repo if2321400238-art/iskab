@@ -51,7 +51,14 @@ class PostController extends Controller
             $validated['thumbnail'] = $request->file('thumbnail')->store('posts', 'public');
         }
 
-        $validated['slug'] = Str::slug($validated['title']);
+        // Generate unique slug
+        $slug = Str::slug($validated['title']);
+        $count = 1;
+        while (Post::where('slug', $slug)->exists()) {
+            $slug = Str::slug($validated['title']) . '-' . $count;
+            $count++;
+        }
+        $validated['slug'] = $slug;
         $validated['author_id'] = auth()->id();
 
         // Set published_at to now if not provided
@@ -86,7 +93,16 @@ class PostController extends Controller
             $validated['thumbnail'] = $request->file('thumbnail')->store('posts', 'public');
         }
 
-        $validated['slug'] = Str::slug($validated['title']);
+        // Generate unique slug only if title changed
+        if ($post->title !== $validated['title']) {
+            $slug = Str::slug($validated['title']);
+            $count = 1;
+            while (Post::where('slug', $slug)->where('id', '!=', $post->id)->exists()) {
+                $slug = Str::slug($validated['title']) . '-' . $count;
+                $count++;
+            }
+            $validated['slug'] = $slug;
+        }
 
         $post->update($validated);
 
