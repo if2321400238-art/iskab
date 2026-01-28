@@ -43,13 +43,16 @@
                             </svg>
                         </button>
 
-                        <div class="hidden group-hover:block absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
-                            <a href="{{ route('about.profil') }}"
-                               class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-t-lg transition">Profil Organisasi</a>
-                            <a href="{{ route('about.korwil') }}"
-                               class="block px-4 py-3 text-green-700 hover:bg-green-50 transition">Korwil</a>
-                            <a href="{{ route('about.rayon') }}"
-                               class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-b-lg transition">Rayon</a>
+                        <!-- Dropdown dengan padding atas untuk hover continuity -->
+                        <div class="hidden group-hover:block absolute left-0 pt-2 w-48 z-50">
+                            <div class="bg-white rounded-lg shadow-xl border border-gray-200">
+                                <a href="{{ route('about.profil') }}"
+                                   class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-t-lg transition">Profil Organisasi</a>
+                                <a href="{{ route('about.korwil') }}"
+                                   class="block px-4 py-3 text-green-700 hover:bg-green-50 transition">Korwil</a>
+                                <a href="{{ route('about.rayon') }}"
+                                   class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-b-lg transition">Rayon</a>
+                            </div>
                         </div>
                     </div>
 
@@ -67,11 +70,14 @@
                             </svg>
                         </button>
 
-                        <div class="hidden group-hover:block absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
-                            <a href="{{ route('posts.berita') }}"
-                               class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-t-lg transition">Berita</a>
-                            <a href="{{ route('posts.pena-santri') }}"
-                               class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-b-lg transition">Pena Santri</a>
+                        <!-- Dropdown dengan padding atas untuk hover continuity -->
+                        <div class="hidden group-hover:block absolute left-0 pt-2 w-48 z-50">
+                            <div class="bg-white rounded-lg shadow-xl border border-gray-200">
+                                <a href="{{ route('posts.berita') }}"
+                                   class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-t-lg transition">Berita</a>
+                                <a href="{{ route('posts.pena-santri') }}"
+                                   class="block px-4 py-3 text-green-700 hover:bg-green-50 rounded-b-lg transition">Pena Santri</a>
+                            </div>
                         </div>
                     </div>
 
