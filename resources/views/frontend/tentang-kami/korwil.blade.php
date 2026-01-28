@@ -5,8 +5,6 @@
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h1 class="text-4xl font-bold mb-4">Koordinator Wilayah (Korwil)</h1>
-    <p class="text-gray-600 text-lg mb-6">Daftar Korwil beserta status kelengkapan SK</p>
-
     <!-- Pencarian -->
     <form method="GET" class="mb-10">
         <div class="flex flex-col sm:flex-row gap-4">

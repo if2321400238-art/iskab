@@ -13,12 +13,19 @@
                 <a href="{{ route('home') }}"
                    class="flex items-center space-x-3"
                    aria-label="ISKAB Home">
-                    <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7v10c0 5.5 3.8 9.7 10 11 6.2-1.3 10-5.5 10-11V7l-10-5zm0 18c-4.4-1-7-4-7-8V8.3l7-3.9 7 3.9V12c0 4-2.6 7-7 8z"/>
-                        </svg>
-                    </div>
-                    <span class="font-bold text-2xl text-green-700">ISKAB</span>
+                    @php
+                        $profil = \App\Models\ProfilOrganisasi::first();
+                    @endphp
+                    @if($profil && $profil->logo_path)
+                        <img src="{{ asset('storage/' . $profil->logo_path) }}" alt="Logo ISKAB" class="w-12 h-12 object-contain">
+                    @else
+                        <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.5 3.8 9.7 10 11 6.2-1.3 10-5.5 10-11V7l-10-5zm0 18c-4.4-1-7-4-7-8V8.3l7-3.9 7 3.9V12c0 4-2.6 7-7 8z"/>
+                            </svg>
+                        </div>
+                    @endif
+                    <span class="font-bold text-2xl text-green-700">{{ $profil?->nama_organisasi ?? 'ISKAB' }}</span>
                 </a>
 
                 <!-- Desktop Menu -->

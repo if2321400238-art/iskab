@@ -32,6 +32,9 @@
                 </a>
 
                 <div class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider mt-6">Organisasi</div>
+                <a href="{{ route('admin.profil-organisasi.edit') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.profil-organisasi.*') ? 'bg-green-600 text-white' : '' }}">
+                    🏢 Profil Organisasi
+                </a>
                 <a href="{{ route('admin.korwil.index') }}" class="block px-6 py-3 text-gray-300 hover:bg-gray-800 hover:text-white {{ request()->routeIs('admin.korwil.*') ? 'bg-green-600 text-white' : '' }}">
                     🗺️ Korwil
                 </a>
