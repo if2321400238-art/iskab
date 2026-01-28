@@ -107,21 +107,3 @@ class UserController extends Controller
             ->with('success', 'User berhasil dihapus');
     }
 }
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-}
