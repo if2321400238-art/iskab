@@ -51,7 +51,7 @@
 <!-- ISKAB Dalam Angka Section -->
 <section class="bg-white py-16 md:py-16">
     <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-40">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-green-700 mb-8 md:mb-12">ISKAB dalam Angka</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-green-700 mb-8 md:mb-12">ISKAB dalam Angka</h2>
         <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-6 md:gap-8">
             <div class="relative">
                 <!-- Background Shape -->
@@ -59,7 +59,7 @@
                 <!-- Card Content -->
                 <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl transform hover:scale-105 transition">
                     <div class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['korwil'] }}</div>
-                    <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">KORWIL</div>
+                    <div class="text-md md:text-xl font-semibold text-white text-center uppercase">KORWIL</div>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                 <!-- Card Content -->
                 <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl transform hover:scale-105 transition">
                     <div class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['rayon'] }}</div>
-                    <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">RAYON</div>
+                    <div class="text-md md:text-xl font-semibold text-white text-center uppercase">RAYON</div>
                 </div>
             </div>
             <div class="relative sm:col-span-2 md:col-span-1">
@@ -78,7 +78,7 @@
                 <!-- Card Content -->
                 <div class="relative bg-gradient-to-br from-[#48D853] to-[#26722C] rounded-2xl md:rounded-3xl p-6 md:p-8 text-center shadow-2xl transform hover:scale-105 transition">
                     <div class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2">{{ $stats['anggota'] }}</div>
-                    <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">SANTRI</div>
+                    <div class="text-md md:text-xl font-semibold text-white text-center uppercase">SANTRI</div>
                 </div>
             </div>
         </div>
@@ -92,10 +92,6 @@
         <div class="max-w-5xl mx-auto">
             @if($profil)
                 <p class="text-gray-700 leading-relaxed text-justify mb-4">{{ $profil->sejarah ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.' }}</p>
-
-                <p class="text-gray-700 leading-relaxed text-justify mb-4">{{ $profil->visi ?? 'Ut nisi nec eros. Suspendisse pulvinar tellus ac nisl. Pellentesque vitae lacus. Maecenas ullamcorper, diam vitae commodo placerat, sapien ipsum dictum eros, vel consequat massa orci vel felis. Curabitur aliquet ante vitae, consequat aliquet libero at, blandit fermentum diam. Integer quis metus vitae lobortis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel erat non mauris convallis vehicula.' }}</p>
-
-                <p class="text-gray-700 leading-relaxed text-justify">{{ $profil->misi ?? 'Nulla at leo nec metus aliquam semper. Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo ullamcorper magna. Ut aliquam sollicitudin leo. Cras iaculis ultricies nulla. Donec quis dui at dolor tempor interdum.' }}</p>
             @else
                 <p class="text-gray-700 leading-relaxed text-justify mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.</p>
 
