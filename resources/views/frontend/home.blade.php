@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section Full Width dari Atas dengan Rounded Bottom -->
-<section class="relative bg-gradient-to-r from-green-700 to-green-800 text-white overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] min-h-[500px] md:min-h-[600px] lg:min-h-[700px] pt-20 md:pt-24">
+<section class="relative bg-gradient-to-r from-green-700 to-green-800 text-white overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] min-h-[550px] md:min-h-[600px] lg:min-h-[700px] pt-20 md:pt-24">
     <!-- Background Image dengan Overlay Hijau Gelap -->
     @if($profil && $profil->hero_image)
         <div class="absolute inset-0">
@@ -19,28 +19,28 @@
     @endif
 
     <!-- Konten Hero - Centered -->
-    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 lg:py-24">
+    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 lg:px-20 pt-28 sm:pt-16 md:pt-20 lg:pt-32 pb-12 sm:pb-16 md:pb-20 lg:pb-32">
         <!-- Heading Besar -->
         <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-10 leading-tight text-white">
             Website Resmi Ikatan Santri<br class="hidden sm:block"><span class="sm:hidden"> </span>Kalimantan Barat (ISKAB)
         </h1>
 
         <!-- Tombol CTA dengan Background Shape Masing-masing -->
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4 w-full sm:w-auto">
+        <div class="flex flex-row justify-center items-center gap-3 md:gap-4">
             <!-- Tombol Hijau dengan Background Shape -->
-            <div class="relative w-full sm:w-auto">
+            <div class="relative w-auto">
                 <div class="absolute inset-0 -inset-x-1 -inset-y-1 rounded-xl md:rounded-2xl" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);"></div>
                 <a href="{{ route('about.profil') }}"
-                   class="relative block text-center px-6 sm:px-8 md:px-10 py-3 md:py-4 bg-gradient-to-r from-green-500 to-green-700 text-white text-sm md:text-base font-semibold rounded-lg md:rounded-xl hover:bg-green-600 transition-all duration-300 shadow-lg">
+                   class="relative block text-center px-3 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-3 bg-gradient-to-r from-green-500 to-green-700 text-white text-xs sm:text-sm md:text-base font-semibold rounded-lg md:rounded-xl hover:bg-green-600 transition-all duration-300 shadow-lg">
                     Tentang kami
                 </a>
             </div>
 
             <!-- Tombol Putih dengan Background Shape -->
-            <div class="relative w-full sm:w-auto">
+            <div class="relative w-auto">
                 <div class="absolute inset-0 -inset-x-1 -inset-y-1 rounded-xl md:rounded-2xl" style="background-color: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px);"></div>
                 <a href="{{ route('posts.berita') }}"
-                   class="relative block text-center px-6 sm:px-8 md:px-10 py-3 md:py-4 bg-white text-green-700 text-sm md:text-base font-semibold rounded-lg md:rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg">
+                   class="relative block text-center px-3 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-3 bg-white text-green-700 text-xs sm:text-sm md:text-base font-semibold rounded-lg md:rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg">
                     Baca Berita
                 </a>
             </div>
@@ -49,10 +49,10 @@
 </section>
 
 <!-- ISKAB Dalam Angka Section -->
-<section class="bg-white py-12 md:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="bg-white py-16 md:py-16">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-40">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-green-700 mb-8 md:mb-12">ISKAB dalam Angka</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-6 md:gap-8">
             <div class="relative">
                 <!-- Background Shape -->
                 <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-2xl md:rounded-3xl"></div>
@@ -62,6 +62,7 @@
                     <div class="text-lg md:text-xl font-semibold text-white uppercase tracking-wider">KORWIL</div>
                 </div>
             </div>
+
             <div class="relative">
                 <!-- Background Shape -->
                 <div class="absolute -inset-x-1 -inset-y-1 bg-gray-200 rounded-2xl md:rounded-3xl"></div>
