@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section Full Width dari Atas dengan Rounded Bottom -->
-<section class="relative bg-gradient-to-r from-green-700 to-green-800 text-white overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] min-h-[550px] md:min-h-[600px] lg:min-h-[700px] pt-20 md:pt-24">
+<section class="relative bg-gradient-to-r from-green-700 to-green-800 text-white overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] min-h-[500px] md:min-h-[600px] lg:min-h-[700px] pt-20 md:pt-24">
     <!-- Background Image dengan Overlay Hijau Gelap -->
     @if($profil && $profil->hero_image)
         <div class="absolute inset-0">
